@@ -967,6 +967,8 @@
   @media (min-width: 768px) {
     .Revere__wrap.Revere__default .read .Revere__content-empty, .Revere__wrap.Revere__default .read .Revere__stars-wrapper, .Revere__wrap.Revere__default .questions .Revere__content-empty, .Revere__wrap.Revere__default .questions .Revere__stars-wrapper {
       float: left; } }
+  .Revere__wrap.Revere__default .Revere__hidden {
+    display: none; }
   .Revere__wrap.Revere__default .Revere__loading {
     display: none;
     margin: 0 0 0 -8px;
