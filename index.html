@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+        <title>Revere Tester</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="build/revere.css" type="text/css">
+        <style type="text/css">
+            body {
+                font-family: sans-serif;
+            }
+
+            .shout {
+                background: rgba(0,0,0,.08);
+                color: #afafaf;
+                font-size: 2rem;
+                font-weight: 300;
+                margin: 0 0 .7rem;
+                padding: .3rem .7rem;
+            }
+
+            .on-demand div {
+                padding: 10px;
+            }
+
+            .on-demand label {
+                display: block;
+                margin-bottom: .5em;
+            }
+
+            .on-demand button {
+                padding: 6px 12px;
+            }
+
+            h5 {
+                margin: 0;
+            }
+
+            row {
+                display: flex;
+                flex-flow: row wrap;
+            }
+
+                row column {
+                    box-sizing: border-box;
+                    margin: 1em 0;
+                    padding: 0 1em 1em;
+                    /*width: 33.33333%;*/
+                    flex: 1;
+                }
+
+            .checkout {
+                box-sizing: border-box;
+                display: flex;
+                padding: 1em 2em;
+            }
+
+            .cart {
+                border-right: 1px solid #ddd;
+                box-sizing: border-box;
+                margin-left: -1em;
+                padding: 0 1em;
+                width: 40%;
+            }
+
+            .line-item {
+                border-bottom: 1px solid #ddd;
+                margin-bottom: 1em;
+                padding-bottom: .5em;
+            }
+
+                .line-item h5 {
+                    margin: 0 0 .25em;
+                    width: 100%;
+                }
+
+                .line-item .details {
+                    display: flex;
+                    flex-flow: row wrap;
+                    width: 100%;
+                }
+
+                    .line-item .details p {
+                        box-sizing: border-box;
+                        margin: 0 0 .5em;
+                        padding: .5em 1em .5em 0;
+                        width: 33.33333%;
+                    }
+
+            .forms {
+                border-right: 1px solid #ddd;
+                box-sizing: border-box;
+                padding: 0 1em;
+                width: 40%;
+            }
+
+            .form-wrapper {
+                display: flex;
+            }
+
+                .form-wrapper .input {
+                    box-sizing: border-box;
+                    padding: .5em .5em 0 0;
+                    width: 25%;
+                }
+
+                    .form-wrapper .input label {
+                        display: block;
+                        margin: 0 0 .5em;
+                    }
+
+                    .form-wrapper .input input {
+                        box-sizing: border-box;
+                        max-width: 100%;
+                    }
+
+            .totals {
+                box-sizing: border-box;
+                margin-right: -1em;
+                padding: 0 1em;
+                width: 20%;
+            }
+        </style>
+  </head>
+  <body>
+        <div id="fb-root"></div>
+        <script>
+            // Load the SDK's source Asynchronously
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+        <row>
+            <column>
+                <p>{{.}}</p>
+            </column>
+        </row>
+        <row>
+            <column>
+                <h2 class="shout">Snippets</h2>
+                <h4>11418049173</h4>
+                <div data-revere="snippet" data-itemid="11418049173" class="Revere__wrap Revere__default snippet"></div>
+                <div id="snippetsId"></div>
+                <h4>11418064789</h4>
+                <div id="snippet-wrap" data-revere="snippet" data-itemid="11418064789" data-tmpl="snippet" class="Revere__wrap Revere__default snippet"></div>
+            </column>
+            <column>
+                <h3 class="shout">Likes: 11418049173</h3>
+                <div data-revere="likes" data-itemid="11418049173" data-tmpl="likes" class="Revere__wrap Revere__default likes"></div>
+            </column>
+        </row>
+        <row>
+            <column>
+                <h2 class="shout">Write</h2>
+                <div id="write-wrap" data-revere="write" data-itemid="11418049173" data-tmpl="write" class="Revere__wrap Revere__default write"></div>
+            </column>
+            <column>
+                <h2 class="shout">Read</h2>
+                <div id="read-wrap" data-revere="read" data-itemid="11418049173" data-tmpl="read" class="Revere__wrap Revere__default read"></div>
+            </column>
+            <column>
+                <h2 class="shout">Questions</h2>
+                <div id="questions-wrap" data-revere="questions" data-itemid="11418049173" class="Revere__wrap Revere__default questions"></div>
+                <div id="questionsId"></div>
+            </column>
+        </row>
+        <row>
+            <column>
+                <h2 class="shout">Tabs Display</h2>
+                <div data-revere="tabs" data-itemid="11418049173"></div>
+            </column>
+        </row>
+        <script>
+            let __port = location.port === "" ? "" : ":" + location.port;
+            var REV = {
+                CompanyId: 24,
+                ItemId: "11418049173",
+                PageSize: 3,
+                PostToFB: true,
+                FBid: "297527187018451"
+            }
+        </script>
+        <!-- Revere eCommerce Integration Tag -->
+        <script>
+            var RevCart = {
+                "LineItems": [
+                    {
+                        "CartItemId" : "abc123",
+                        "SKU": "43264",
+                        "StyleId": "8119I524DNS15",
+                        "Name": "8119 Betty Boot Jean in Denial",
+                        "UnitPrice": 188.0000,
+                        "SalePrice": 179.9900,
+                        "Quantity": 1,
+                        "TotalPrice": 179.9900,
+                        "ImageUrl": "https://mabaseline.blob.core.windows.net/images/products/1_43261_ZM_DENIAL.JPG",
+                        "ProductUrl": "http://ma50demo.virid.com/product/43261",
+                        "Brand": "J BRAND"
+                    },
+                    {
+                        "CartItemId": "abc456",
+                        "SKU": "43177",
+                        "StyleId": "1841259HJAS15",
+                        "Name": "8119 Betty Boot Jean in Denial",
+                        "UnitPrice": 220.0000,
+                        "SalePrice": 220.0000,
+                        "Quantity": 1,
+                        "TotalPrice": 220.0000,
+                        "ImageUrl": "https://mabaseline.blob.core.windows.net/images/products/1_43261_ZM_DENIAL.JPG",
+                        "ProductUrl": "http://ma50demo.virid.com/product/43173",
+                        "Brand": ""
+                    }
+                ],
+                "CartPhase": "",
+                "Currency": "USD",
+                "Subtotal": 389.9900,
+                "ShippingAmount": 9.9900,
+                "DiscountAmount": 0.0000,
+                "TaxAmount": 0.0000,
+                "OrderTotal": 399.9800,
+                "OrderId": "",
+                "EmailAddress": "",
+                "CartUrl": "http://ma50demo.virid.com/bag"
+            };
+        </script>
+        <!-- End Revere eCommerce Integration Tag -->
+  <script type="text/javascript" src="/revere-new.js"></script></body>
+</html>
