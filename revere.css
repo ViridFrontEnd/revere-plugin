@@ -787,7 +787,8 @@
       display: block;
       width: 100%; }
   .Revere__wrap.Revere__default .Revere__checkbox-form-group, .Revere__wrap.Revere__default .Revere__radio-form-group {
-    display: flex; }
+    display: flex;
+    flex-wrap: wrap; }
     .Revere__wrap.Revere__default .Revere__checkbox-form-group > label, .Revere__wrap.Revere__default .Revere__radio-form-group > label {
       align-content: center;
       align-items: center;
