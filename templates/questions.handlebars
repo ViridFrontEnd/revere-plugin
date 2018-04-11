@@ -135,9 +135,9 @@
                     <input type="text" class="Revere__textbox Revere__text-nickname" id="RevereTextNicknameQuestions-{{ItemId}}" data-reverefield="nicknameQA" />
                 </label>
             </div>
-            <div class="Revere__review-field Revere__required" id="RevereEmailGroupQuestions-{{ItemId}}" data-fieldname="Email">
+            <div class="Revere__review-field{{#if EmailRequired}} Revere__required{{/if}}" id="RevereEmailGroupQuestions-{{ItemId}}" data-fieldname="Email">
                 <label class="Revere__label" for="RevereTextEmailQuestions-{{ItemId}}">
-                    Email:{{#if EmailRequired}}<span class="error">* required field</span>{{/if}}
+                    Email:<span class="error">* {{#if EmailRequired}}required field. {{/if}}you must enter a valid email address</span>
                     <input type="text" class="Revere__textbox Revere__text-email" id="RevereTextEmailQuestions-{{ItemId}}" data-reverefield="emailQA" />
                 </label>
             </div>
