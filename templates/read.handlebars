@@ -162,20 +162,20 @@
                                 <div class="Revere__response-field Revere__required" id="RevereNicknameGroupReviewResponse-{{Id}}" data-fieldname="Nickname">
                                     <label class="Revere__label" for="RevereTextNicknameReviewResponse-{{Id}}">
                                         your nickname:<span class="error">* required field</span>
+                                        <input type="text" class="Revere__textbox Revere__text-nickname" id="RevereTextNicknameReviewResponse-{{Id}}" data-reverefield="NicknameResponse" />
                                     </label>
-                                    <input type="text" class="Revere__textbox Revere__text-nickname" id="RevereTextNicknameReviewResponse-{{Id}}" data-reverefield="NicknameResponse" />
                                 </div>
                                 <div class="Revere__response-field {{#if ../../EmailRequired}}Revere__required{{/if}}" id="ReviewResponseEmail-{{Id}}" data-fieldname="Email">
                                     <label class="Revere__label" for="RevereTextEmailReviewResponse-{{Id}}">
-                                        email:{{#if ../../EmailRequired}}<span class="error">* required field</span>{{/if}}
+                                        email:<span class="error">* {{#if ../../EmailRequired}}required field. {{/if}}please include a valid email</span>
+                                        <input type="text" class="Revere__textbox Revere__text-email" id="RevereTextEmailReviewResponse-{{Id}}" data-reverefield="EmailResponse" />
                                     </label>
-                                    <input type="text" class="Revere__textbox Revere__text-email" id="RevereTextEmailReviewResponse-{{Id}}" data-reverefield="EmailResponse" />
                                 </div>
                                 <div class="Revere__response-field" id="ReviewResponseLocation-{{Id}}" data-fieldname="Location">
                                     <label class="Revere__label" for="RevereTextLocationReviewResponse-{{Id}}">
                                         location:
+                                        <input type="text" class="Revere__textbox Revere__text-location" id="RevereTextLocationReviewResponse-{{Id}}" data-reverefield="LocationResponse" />
                                     </label>
-                                    <input type="text" class="Revere__textbox Revere__text-location" id="RevereTextLocationReviewResponse-{{Id}}" data-reverefield="LocationResponse" />
                                 </div>
                             </fieldset>
                             <fieldset class="Revere__fieldset Revere__textareas">
@@ -183,8 +183,8 @@
                                 <div class="Revere__response-field Revere__required" id="RevereReviewResponseGroup-{{Id}}" data-fieldname="Response">
                                     <label class="Revere__label" for="RevereTextReviewResponse-{{Id}}">
                                         Share your thoughts:<span class="error">* required field</span>
+                                        <textarea class="Revere__textarea Revere__textrea-response" rows="8" id="RevereTextReviewResponse-{{Id}}"></textarea>
                                     </label>
-                                    <textarea class="Revere__textarea Revere__textrea-response" rows="8" id="RevereTextReviewResponse-{{Id}}"></textarea>
                                 </div>
                             </fieldset>
                             <div class="Revere__form-actions Revere__response-form-actions">

@@ -8,7 +8,8 @@
   /* jQuery.Rating Plugin CSS - http://www.fyneworks.com/jquery/star-rating/ */
   /* Read Only CSS */
   /* Partial Star CSS */
-  /* END jQuery.Rating Plugin CSS */ }
+  /* END jQuery.Rating Plugin CSS */
+  /* Custom Snippet hiding/showing & alignment - Raumer 4/13/2018 */ }
   .Revere__wrap.Revere__default *,
   .Revere__wrap.Revere__default *:before,
   .Revere__wrap.Revere__default *:after {
@@ -940,8 +941,6 @@
         margin-bottom: 0; }
     .Revere__wrap.Revere__default .Revere__content-empty h5 {
       margin-bottom: 8px; }
-  .Revere__wrap.Revere__default .snippet {
-    text-align: center; }
   .Revere__wrap.Revere__default .read .Revere__read-write-button, .Revere__wrap.Revere__default .read .Revere__question-write-button, .Revere__wrap.Revere__default .questions .Revere__read-write-button, .Revere__wrap.Revere__default .questions .Revere__question-write-button {
     color: white;
     background-color: #676b72;
@@ -1038,3 +1037,15 @@
 	overflow: hidden !important*/ }
   .Revere__wrap.Revere__default .rating-cancel {
     display: none !important; }
+  .Revere__wrap.Revere__default.snippet {
+    text-align: center; }
+  .Revere__wrap.Revere__default.snippet.mini .Revere__snippet-likes {
+    display: none; }
+  .Revere__wrap.Revere__default.snippet.micro .Revere__snippet-likes {
+    display: none; }
+  .Revere__wrap.Revere__default.snippet.micro .Revere__snippet-description {
+    display: none; }
+  .Revere__wrap.Revere__default.snippet.left {
+    text-align: left; }
+  .Revere__wrap.Revere__default.snippet.right {
+    text-align: right; }
