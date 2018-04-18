@@ -29,21 +29,21 @@
                 <div class="Revere__review-field Revere__required" id="RevereNicknameGroup-{{ItemId}}" data-fieldname="Nickname">
                     <label class="Revere__label" for="RevereTextNickname-{{ItemId}}">
                         Name:<span class="error">* required field</span>
+                        <input type="text" class="Revere__text Revere__text-nickname" id="RevereTextNickname-{{ItemId}}"
+                               data-reverefield="nickname" />
                     </label>
-                    <input type="text" class="Revere__text Revere__text-nickname" id="RevereTextNickname-{{ItemId}}"
-                           data-reverefield="nickname" />
                 </div>
                 <div class="Revere__review-field {{#if EmailRequired}}Revere__required{{/if}}" id="RevereEmailGroup-{{ItemId}}" data-fieldname="Email">
                     <label class="Revere__label" for="RevereTextEmail-{{ItemId}}">
-                        Email:{{#if EmailRequired}}<span class="error">* required field</span>{{/if}}
+                        Email:<span class="error">* {{#if EmailRequired}}required field.{{/if}} you must enter a valid email address</span>
+                        <input type="text" class="Revere__text Revere__text-email" id="RevereTextEmail-{{ItemId}}" data-reverefield="email" />
                     </label>
-                    <input type="text" class="Revere__text Revere__text-email" id="RevereTextEmail-{{ItemId}}" data-reverefield="email" />
                 </div>
                 <div class="Revere__review-field" data-fieldname="Location">
                     <label class="Revere__label" for="RevereTextLocation-{{ItemId}}">
                         Location:
+                        <input type="text" class="Revere__text Revere__text-location" id="RevereTextLocation-{{ItemId}}" data-reverefield="location" />
                     </label>
-                    <input type="text" class="Revere__text Revere__text-location" id="RevereTextLocation-{{ItemId}}" data-reverefield="location" />
                 </div>
             </fieldset>
         </div>
@@ -51,9 +51,10 @@
             <fieldset class="Revere__fieldset Revere__ratings">
                 <legend>Your Review</legend>
                 <div class="Revere__review-field" id="RevereReviewTitleGroup-{{ItemId}}" data-fieldname="Title">
-                    <label class="Revere__label" for="RevereTextReviewTitle-{{ItemId}}">headline:</label>
-                    <input type="text" class="Revere__text Revere__text-title" id="RevereTextReviewTitle-{{ItemId}}"
-                           data-reverefield="title" />
+                    <label class="Revere__label" for="RevereTextReviewTitle-{{ItemId}}">headline:
+                        <input type="text" class="Revere__text Revere__text-title" id="RevereTextReviewTitle-{{ItemId}}"
+                               data-reverefield="title" />
+                    </label>
                 </div>
                 {{#if ReviewType.ShowStarRating}}
                     <div class="Revere__overall-group" id="RevereOverallGroup-{{ItemId}}">
@@ -97,8 +98,9 @@
                     <div class="Revere__review-field {{#unless AllowRatingsWithoutReview}}Revere__required{{/unless}}" id="RevereReviewGroup-{{ItemId}}" data-fieldname="Review">
                         <label class="Revere__label" for="RevereTextGeneral-{{ItemId}}">
                             Review Text: {{#unless AllowRatingsWithoutReview}}<span class="error">* required field</span>{{/unless}}
+                            <textarea class="Revere__textarea" rows="8" id="RevereTextGeneral-{{ItemId}}"></textarea>
                         </label>
-                        <textarea class="Revere__textarea" rows="8" id="RevereTextGeneral-{{ItemId}}"></textarea>
+
                     </div>
                     {{#if AllowImages}}
                         <div class="Revere__forms Revere__review-media">
