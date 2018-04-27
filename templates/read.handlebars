@@ -5,6 +5,7 @@
     {{#if Rating}}
         <div class="Revere__stars-wrapper">
             <div class="Revere__read-stars"><img src="{{StarSrc}}" title="{{Rating}} out of 5"></div>
+            <div data-revere="snippet" data-itemid="{{ItemId}}" class="Revere__wrap Revere__default snippet mini"></div>
             <div class="Revere__read-overall" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
                 <meta itemprop="reviewCount" content="{{Reviews.length}}" />
                 <meta itemprop="ratingCount" content="{{Reviews.length}}" />
