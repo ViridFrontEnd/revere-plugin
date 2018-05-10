@@ -2,28 +2,54 @@
     <h3 class="Revere__item-title">
         {{#if Name}}<span>&ldquo;{{{Name}}}&rdquo;</span>{{/if}} Reviews
     </h3>
-    {{#if Rating}}
-        <div class="Revere__stars-wrapper">
-            <div class="Revere__read-stars"><img src="{{StarSrc}}" title="{{Rating}} out of 5"></div>
-            <div data-revere="snippet" data-itemid="{{ItemId}}" class="Revere__wrap Revere__default snippet mini"></div>
-            <div class="Revere__read-overall" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
-                <meta itemprop="reviewCount" content="{{Reviews.length}}" />
-                <meta itemprop="ratingCount" content="{{Reviews.length}}" />
-                <meta itemprop="bestRating" content="5" />
-                <meta itemprop="worstRating" content="1" />
-                <meta itemprop="ratingValue" content="{{Rating}}" />
-                <meta itemprop="itemReviewed" itemscope="" itemtype="http://schema.org/Product" />
-                {{ReviewCountText}}
+    <div class="Revere__stars-wrapper">
+        {{#if Rating}}
+        <div class="Revere__histogram">
+            <div class="Revere__review-summary" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+                {{!--<div class="Revere__read-stars"><img src="{{StarSrc}}" title="{{Rating}} out of 5"></div>--}}
+                {{!--<div class="Revere__read-overall" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">--}}
+                    <meta itemprop="reviewCount" content="{{Reviews.length}}" />
+                    <meta itemprop="ratingCount" content="{{Reviews.length}}" />
+                    <meta itemprop="bestRating" content="5" />
+                    <meta itemprop="worstRating" content="1" />
+                    <meta itemprop="ratingValue" content="{{Rating}}" />
+                    <meta itemprop="itemReviewed" itemscope="" itemtype="http://schema.org/Product" />
+                    {{!--{{ReviewCount}} Reviews}}--}}
+                {{!--</div>--}}
+                <img src="{{StarSrc}}" title="{{Rating}} out of 5"> ({{ReviewCount}})
+                <p>{{Rating}} out of 5 stars</p>
+                {{!--{{QuestionCount}} Questions \ {{AnswerCount}} Answers--}}
+            </div>
+            <div class="Revere__review-breakdown">
+                <table class="Revere__histogram-table">
+                {{#each ReviewSummary}}
+                    <tr>
+                        <td>
+                            <img src="{{../StarPath}}{{Score}}stars.png" title="{{Score}} star reviews">
+                        </td>
+                        <td width="45%">
+                            <div class="Revere__meter" aria-label="{{Percentage}}">
+                                <div class="Revere__meter-bar" style="width: {{Percentage}}%;"></div>
+                            </div>
+                        </td>
+                        <td>
+                            {{Percentage}}%
+                        </td>
+                    </tr>
+                {{/each}}
+                </table>
             </div>
         </div>
-    {{else}}
-        <div class="Revere__content-empty" id="RevereContentEmpty-{{ItemId}}">
-            <h5>No reviews have been written for this product yet.</h5>
+        {{else}}
+            <div class="Revere__content-empty" id="RevereContentEmpty-{{ItemId}}">
+                <h5>No reviews have been written for this product yet.</h5>
+            </div>
+        {{/if}}
+        <div class="Revere__button-wrapper">
+            <a class="Revere__read-write-button" href="#RevereWriteReviewForm-{{ItemId}}" onclick="document.getElementById('RevereWriteReviewForm-{{ItemId}}') ? document.getElementById('RevereWriteReviewForm-{{ItemId}}').className = document.getElementById('RevereWriteReviewForm-{{ItemId}}').className.replace('Revere__hidden', '').trim() : void(0)">Write a Review</a>
         </div>
-    {{/if}}
-    <div class="Revere__button-wrapper">
-        <a class="Revere__read-write-button" href="#RevereWriteReviewForm-{{ItemId}}" onclick="document.getElementById('RevereWriteReviewForm-{{ItemId}}') ? document.getElementById('RevereWriteReviewForm-{{ItemId}}').className = document.getElementById('RevereWriteReviewForm-{{ItemId}}').className.replace('Revere__hidden', '').trim() : void(0)">Write a Review</a>
     </div>
+
     {{#if Reviews}}
         <div class="Revere__sort-wrapper">
             <label for="RevereSortSelect-{{ItemId}}" class="Revere__label">sort by:</label>
